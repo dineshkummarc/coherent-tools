@@ -1,0 +1,19 @@
+/*jsl:import coherent-uncompressed.js*/
+
+
+/**
+
+ */
+<%= namespace.empty? ? "var " : ""%><%=full_name%>= Class.create(coherent.KVO, {
+
+    sampleProperty: function()
+    {
+        return this.__sampleProperty;
+    },
+    
+    setSampleProperty: function(newSampleProperty)
+    {
+        this.__sampleProperty= newSampleProperty;
+    }
+    
+});

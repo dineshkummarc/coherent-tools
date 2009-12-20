@@ -1,0 +1,19 @@
+/*jsl:import coherent-uncompressed.js*/
+
+INC('<%=name%>.css');
+
+NIB({
+
+    '<%=name%>': VIEW(INC('<%=name%>.html'), {
+                    /* Put your view structure here. */
+                    
+                    ':root': coherent.View({
+                            /* This is the container DOM element. */
+                        })
+                }),
+
+    'owner': {
+        view: '<%=name%>'
+    }
+
+});

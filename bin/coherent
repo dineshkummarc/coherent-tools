@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'rubigen'
+
+require 'rubigen/scripts/generate'
+
+def find_app_root
+  path= Dir.pwd
+  while '/'!=path
+    return path if File.exists?(File.join(path, "distil.yml"))
+    path = File.expand_path(File.join(path, ".."))
+  end
+end
+
+if ('app'==ARGV[0])
+  # pull off app "command"
+  ARGV.shift
+  
+  source = RubiGen::PathSource.new(:application, 
+    File.join(File.dirname(__FILE__), "../app_generators"))
+  RubiGen::Base.reset_sources
+  RubiGen::Base.append_sources source
+
+  RubiGen::Scripts::Generate.new.run(ARGV, :generator => 'coherent')
+else
+  APP_ROOT= find_app_root || Dir.pwd
+  
+  RubiGen::Base.use_component_sources! [:coherent, :test_unit]
+  RubiGen::Scripts::Generate.new.run(ARGV)
+end

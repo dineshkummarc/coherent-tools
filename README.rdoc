@@ -1,0 +1,3 @@
+== Copyright
+
+Copyright (c) 2009 Jeff Watkins. See LICENSE for details.
