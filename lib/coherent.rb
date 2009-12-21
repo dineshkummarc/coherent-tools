@@ -9,7 +9,6 @@ class CoherentBaseGenerator < RubiGen::Base
 
     all_files.map! { |filepath| prefix_regex.match(filepath)[1] }
 
-    puts all_files.inspect
     b= binding
     
     all_folders= all_files.map { |filepath|

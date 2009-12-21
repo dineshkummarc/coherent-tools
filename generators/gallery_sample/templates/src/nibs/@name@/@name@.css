@@ -1,0 +1,116 @@
+.gallery
+{
+    border: 1px solid #888;
+    -webkit-border-radius: 5px;
+    background-color: #f8f8f8;
+    padding: 10px 10px 35px 10px;
+    width: 254px;
+    height: 200px;
+    -webkit-box-shadow: 0px 2px 5px rgba(0,0,0,0.5);
+
+    overflow: hidden;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -125px 0 0 -127px;
+}
+
+.gallery.invisible
+{
+    opacity: 0.5;
+    width: 50px;
+    height: 50px;
+    margin: -25px 0 0 -25px;
+}
+
+.gallery.invisible *
+{
+    display: none !important;
+}
+
+.gallery p
+{
+    font-family: helvetica, arial, sans serif;
+    font-size: 13px;
+    color: #555;
+    background-color: inherit;
+}
+
+.gallery p.updating
+{
+    background-color: yellow;
+}
+
+.gallery img
+{
+    border: 1px solid #666;
+    padding: 1px;
+    background-color: white;
+}
+
+.gallery a.next
+{
+    position: absolute;
+    display: block;
+    text-indent: -9999px;
+    outline: none;
+    background-image: url(images/next.gif);
+    right: 10px;
+    bottom: 10px;
+    height: 22px;
+    width: 22px;
+    background-position: 0px -22px;
+}
+
+.gallery a.prev
+{
+    position: absolute;
+    display: block;
+    outline: none;
+    text-indent: -9999px;
+    background-image: url(images/prev.gif);
+    left: 10px;
+    bottom: 10px;
+    height: 22px;
+    width: 22px;
+    background-position: 0px -22px;
+}
+
+.gallery a.next:active,
+.gallery a.prev:active
+{
+    background-position: 0px 0px;
+}
+
+.gallery a.disabled,
+.gallery a.disabled:active
+{
+    background-position: 0px -44px;
+    cursor: default;
+}
+
+.modal-overlay-guard
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-overlay-backdrop
+{
+    background-color: black;
+    opacity: 0.65;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-overlay-backdrop.invisible
+{
+    opacity: 0;
+}
+
