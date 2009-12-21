@@ -1,10 +1,10 @@
 /*jsl:import coherent-uncompressed.js*/
 
-INC('<%=name%>.css');
+NIB.asset('<%=name%>.css');
 
 NIB({
 
-    '<%=name%>': VIEW(INC('<%=name%>.html'), {
+    '<%=name%>': VIEW(NIB.asset('<%=name%>.html'), {
                     /* Put your view structure here. */
                     
                     ':root': coherent.View({
