@@ -13,7 +13,7 @@ begin
     gem.files= Dir['lib/**/*', 'app_generators/**/*', 'generators/**/*', 'bin/*', '[A-Za-z]*', 'vendor/**/*']
     gem.files.reject! { |f| File.directory?(f) }
     gem.add_dependency('distil', '>= 0.7.0')
-    gem.extensions= ['vendor/extconf.rb']
+    # gem.extensions= ['vendor/extconf.rb']
     
     # gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
