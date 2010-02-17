@@ -1,0 +1,40 @@
+/*jsl:import coherent-uncompressed.js*/
+
+NIB.asset('<%=name%>.css');
+
+NIB({
+
+    '<%=name%>': VIEW(NIB.asset('<%=name%>.html'), {
+                    ':root': coherent.View({
+                                visibleBinding: 'controller.arrangedObjects.@count'
+                            }),
+                    'img': coherent.Image({
+                                srcBinding: 'controller.selection.href'
+                            }),
+                    'p': coherent.View({
+                                textBinding: 'controller.selection.caption'
+                            }),
+                    'a.next': coherent.Anchor({
+                                enabledBinding: 'controller.canSelectNext',
+                                target: 'controller',
+                                action: 'selectNext'
+                            }),
+                    'a.prev': coherent.Anchor({
+                                enabledBinding: 'controller.canSelectPrevious',
+                                target: 'controller',
+                                action: 'selectPrevious'
+                            })
+                }),
+                
+    'data': NIB.asset('<%=name%>.json'),
+    
+    'controller': coherent.ArrayController({
+                    contentBinding: 'data.photos'
+                }),
+                
+    'owner': {
+        view: '<%=name%>'
+    }
+
+});
+

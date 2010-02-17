@@ -10,16 +10,8 @@
 </head>
 <body>
     <script>
-        var viewController= new coherent.ViewController({
-                                    nibUrl: "res/latest/<%=nib_name%>.jsnib"
-                                });
-        var d= viewController.loadView();
-        
-        function viewLoaded(whatever)
-        {
-            document.body.appendChild(viewController.view().node);
-        }
-        d.addCallback(viewLoaded);
+        coherent.Application.shared.setAssetLocation("res/latest");
+        coherent.Application.shared.setMainBundle("<%=nib_name%>");
     </script>
 </body>
 </html>

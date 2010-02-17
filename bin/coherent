@@ -13,7 +13,8 @@ def find_app_root
   end
 end
 
-if ('app'==ARGV[0])
+case ARGV[0]
+when 'app'
   # pull off app "command"
   ARGV.shift
   
@@ -23,6 +24,17 @@ if ('app'==ARGV[0])
   RubiGen::Base.append_sources source
 
   RubiGen::Scripts::Generate.new.run(ARGV, :generator => 'coherent')
+when 'demo'
+  # pull off app "command"
+  ARGV.shift
+  
+  source = RubiGen::PathSource.new(:application, 
+    File.join(File.dirname(__FILE__), "../demo_generators"))
+  RubiGen::Base.reset_sources
+  RubiGen::Base.append_sources source
+
+  generator= ARGV.shift
+  RubiGen::Scripts::Generate.new.run(ARGV, :generator => generator)
 else
   APP_ROOT= find_app_root || Dir.pwd
   

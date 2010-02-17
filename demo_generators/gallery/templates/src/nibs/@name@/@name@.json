@@ -1,0 +1,25 @@
+{
+    photos: [
+        {
+            caption: "Molly on the slide.",
+            href: NIB.asset("photos/molly-1.jpg")
+        },
+        {
+            caption: "Monkey in training",
+            href: NIB.asset("photos/molly-2.jpg")
+        },
+        {
+            caption: "Spaz attack!",
+            href: NIB.asset("photos/molly-3.jpg")
+        },
+        {
+            caption: "Ride `Em, Molly!",
+            href: NIB.asset("photos/molly-4.jpg")
+        },
+        {
+            caption: "Don't mess with my zebra.",
+            href: NIB.asset("photos/molly-5.jpg")
+        }
+    ]
+
+}

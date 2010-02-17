@@ -1,4 +1,4 @@
-require "activesupport"
+require "active_support"
 
 class CoherentBaseGenerator < RubiGen::Base
   
