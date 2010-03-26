@@ -1,0 +1,12 @@
+require 'optparse'
+
+require 'plugin/commands/plugin'
+require 'plugin/commands/discover'
+require 'plugin/commands/info'
+require 'plugin/commands/install'
+require 'plugin/commands/list'
+require 'plugin/commands/remove'
+require 'plugin/commands/source'
+require 'plugin/commands/sources'
+require 'plugin/commands/unsource'
+require 'plugin/commands/update'

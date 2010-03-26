@@ -35,6 +35,10 @@ when 'demo'
 
   generator= ARGV.shift
   RubiGen::Scripts::Generate.new.run(ARGV, :generator => generator)
+when 'plugin'
+  require File.join(File.dirname(__FILE__), "../lib/plugin")
+  ARGV.shift
+  Coherent::Commands::Plugin.parse!
 else
   APP_ROOT= find_app_root || Dir.pwd
   

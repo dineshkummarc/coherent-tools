@@ -11,11 +11,3 @@ class NibFile < JavascriptFile
   end
 
 end
-
-# class JslDependencyFilter < Filter
-#   
-#   def handles_file(file)
-#     return [".js", ".jsnib"].include?(file.extension)
-#   end
-#   
-# end

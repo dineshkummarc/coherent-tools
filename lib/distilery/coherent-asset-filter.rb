@@ -23,7 +23,7 @@ class CoherentAssetFilter < FileReferenceFilter
         import_file= File.expand_path(File.join(file.parent_folder, $1))
 
         if (!File.exists?(import_file))
-          file.error "Missing import file: #{$1}", line_num
+          file.warning "Missing asset: #{$1}", line_num
           "NIB.asset('#{$1}')"
         else
           asset= SourceFile.from_path(import_file)
@@ -42,7 +42,7 @@ class CoherentAssetFilter < FileReferenceFilter
         import_file= File.expand_path(File.join(file.parent_folder, $1))
 
         if (!File.exists?(import_file))
-          file.error "Missing import file: #{$1}", line_num
+          file.warning "Missing import file: #{$1}", line_num
           "INC('#{$1}')"
         else
           asset= SourceFile.from_path(import_file)
