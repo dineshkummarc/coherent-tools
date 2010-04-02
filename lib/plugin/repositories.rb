@@ -58,7 +58,7 @@ module Coherent
   
     def defaults
       <<-DEFAULTS
-      http://coherent.googlecode.com/svn/plugins/
+      git://github.com/jeffwatkins/coherent-plugins.git
       DEFAULTS
     end
  
