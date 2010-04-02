@@ -36,7 +36,7 @@
     background-color: inherit;
 }
 
-.gallery p.c-updating
+.gallery p.ui-updating
 {
     background-color: yellow;
 }
@@ -82,8 +82,8 @@
     background-position: 0px 0px;
 }
 
-.gallery a.c-disabled,
-.gallery a.c-disabled:active
+.gallery a.ui-disabled,
+.gallery a.ui-disabled:active
 {
     background-position: 0px -44px;
     cursor: default;

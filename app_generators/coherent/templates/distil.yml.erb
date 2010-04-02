@@ -16,31 +16,27 @@ external projects:
 
 
 
-# This is the main target for your application. This target will yield optimised
-# CSS and Javascript files for all of your assets. In addition, it will emit
-# uncompressed and debug versions which are useful during development.
-all:
-    js:
-        # Your main Javascript assets, specified in order they should be loaded.
-        # The final entry loads all Javascript assets in the src/js folder and
-        # uses the import statements to compute the dependency order.
-        - coherent-uncompressed.js
-        - src/js/<%=name%>.js
-        - src/js
+# Your main Javascript assets, specified in order they should be loaded.
+# The final entry loads all Javascript assets in the src/js folder and
+# uses the import statements to compute the dependency order.
+<%=name%>.js:
+  - coherent-uncompressed.js
+  - src/js/<%=name%>.js
+  - src/js
 
-    css:
-        # Your CSS files. You may include all CSS files in the src/css folder,
-        # but they may be included in the wrong order. So it's usually best to
-        # specify them explicitly
-        - src/css/reset.css
-        - src/css/<%=name%>.css
+# Your CSS files. You may include all CSS files in the src/css folder,
+# but they may be included in the wrong order. So it's usually best to
+# specify them explicitly
+<%=name%>.css:
+  - src/css/reset.css
+  - src/css/<%=name%>.css
 
-    jsnib:
-        # Create a JSNIB package file for each folder in the src/nibs folder.
-        # A JSNIB package is a self contained group of Javascript, CSS and HTML
-        # that is used to provide loadable UI modules.
-        remove prefix: src/nibs
-        include: src/nibs
+# Create a bundle file for the primary nib file.
+# A JsBundle is a self contained group of Javascript, CSS and HTML
+# that is used to provide loadable UI modules.
+<%=nib_name%>.jsbundle:
+  - src/nibs/<%=nib_name%>/<%=nib_name%>.jsnib
+  - src/nibs/<%=nib_name%>/
 
 pages:
     # Copy any HTML assets from the src/pages folder over to the build folder.
