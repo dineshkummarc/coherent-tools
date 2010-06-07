@@ -1,0 +1,21 @@
+name: <%=name%>
+version: 1.0.0
+notice: src/NOTICE
+type: application
+export: true
+
+# Need to include the coherent extensions for Distil.
+#distilery: coherent
+
+external:
+  - name: coherent
+    path: ext/coherent
+    linkage: strong
+    repository: git://github.com/jeffwatkins/coherent.git
+
+source:    
+  - src/js/<%=name%>.js
+  - src/js
+  - src/nibs
+  - src/css/reset.css
+  - src/css/<%=name%>.css

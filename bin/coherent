@@ -5,6 +5,18 @@ require 'rubigen'
 
 require 'rubigen/scripts/generate'
 
+def find_project_file(dir=nil)
+  dir ||= Dir.pwd
+  
+  while dir.length > 1
+    Dir.glob(File.join(dir, '*.jsproj')) { |file|
+      return file if File.basename(dir)===File.basename(file, '.jsproj')
+    }
+    dir = File.dirname(dir)
+  end
+  
+end
+
 def find_app_root
   path= Dir.pwd
   while '/'!=path
@@ -40,8 +52,14 @@ when 'plugin'
   ARGV.shift
   Coherent::Commands::Plugin.parse!
 else
-  APP_ROOT= find_app_root || Dir.pwd
+  PROJECT_FILE= find_project_file
+  if !PROJECT_FILE
+    puts "Could not determine project root."
+    exit 1
+  end
   
+  APP_ROOT= File.dirname(PROJECT_FILE)
+
   RubiGen::Base.use_component_sources! [:coherent, :test_unit]
   RubiGen::Scripts::Generate.new.run(ARGV)
 end

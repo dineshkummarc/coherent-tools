@@ -17,7 +17,7 @@ class NibGenerator < CoherentBaseGenerator
   def manifest
     record do |m|
       m.directory "src/nibs"
-      copy_template_folder m, "src/nibs/#{@name}"
+      copy_template_folder m, "src/nibs/#{@name}.jsnib"
     end
   end
 

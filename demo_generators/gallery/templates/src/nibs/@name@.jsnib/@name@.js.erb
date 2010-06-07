@@ -1,10 +1,8 @@
-/*jsl:import coherent-debug.js*/
+/*jsl:import coherent*/
 
-NIB.asset('<%=name%>.css');
+NIB('<%=name%>', {
 
-NIB({
-
-    '<%=name%>': VIEW(NIB.asset('<%=name%>.html'), {
+    'custom-view': VIEW({
                     ':root': coherent.View({
                                 visibleBinding: 'controller.arrangedObjects.@count'
                             }),
