@@ -13,7 +13,7 @@ begin
     gem.files= Dir['lib/**/*', 'app_generators/**/*', 'generators/**/*',
                    'demo_generators/**/*', 'bin/*', '[A-Za-z]*', 'vendor/**/*']
     gem.files.reject! { |f| File.directory?(f) }
-    gem.add_dependency('distil', '>= 0.8.4')
+    gem.add_dependency('distil', '>= 0.11.0')
     gem.add_dependency('rubigen', '>= 1.5.2')
     # gem.extensions= ['vendor/extconf.rb']
     
