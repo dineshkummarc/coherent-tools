@@ -6,9 +6,11 @@ type: application
 external:
   - name: coherent
     path: ext/coherent
-    linkage: strong
     repository: http://github.com/jeffwatkins/coherent.git
-    
+
+include:
+  - coherent
+  
 source:  
   - src/index.html
   - src/js/<%=name%>.js
