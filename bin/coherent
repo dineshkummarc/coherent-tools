@@ -36,6 +36,7 @@ when 'app'
   RubiGen::Base.append_sources source
 
   RubiGen::Scripts::Generate.new.run(ARGV, :generator => 'coherent')
+
 when 'demo'
   # pull off app "command"
   ARGV.shift
@@ -47,6 +48,7 @@ when 'demo'
 
   generator= ARGV.shift
   RubiGen::Scripts::Generate.new.run(ARGV, :generator => generator)
+  
 when 'plugin'
   require File.join(File.dirname(__FILE__), "../lib/plugin")
   ARGV.shift

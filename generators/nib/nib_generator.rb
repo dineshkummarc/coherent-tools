@@ -10,7 +10,7 @@ class NibGenerator < CoherentBaseGenerator
     super
     usage if args.empty?
     @name = args.shift
-    
+
     extract_options
   end
 

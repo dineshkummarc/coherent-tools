@@ -19,6 +19,7 @@ class CoherentGenerator < CoherentBaseGenerator
     usage if args.empty?
     @destination_root = File.expand_path(args.shift)
     @name = base_name
+
     extract_options
   end
 
