@@ -2,16 +2,16 @@
 
 NIB('<%=name%>', {
 
-    'custom-view': VIEW({
-                    /* Put your view structure here. */
-                    
-                    ':root': coherent.View({
-                            /* This is the container DOM element. */
-                        })
-                }),
+  '<%=name%>': VIEW({
+      /* Put your view structure here. */
+      
+      ':root': coherent.View({
+              /* This is the container DOM element. */
+          })
+  }),
 
-    'owner': {
-        view: 'custom-view'
-    }
+  'owner': {
+    view: REF('<%=name%>')
+  }
 
 });
