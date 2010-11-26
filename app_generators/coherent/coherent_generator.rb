@@ -9,7 +9,7 @@ class CoherentGenerator < CoherentBaseGenerator
   COHERENT_FOLDER = "ext/coherent"
   
   default_options :author => nil,
-                  :nib_name => 'main'
+                  :nib_name => 'Main'
   
 
   attr_reader :name, :nib_name
@@ -30,7 +30,7 @@ class CoherentGenerator < CoherentBaseGenerator
       BASEDIRS.each { |path| m.directory path }
 
       copy_template_folder m
-      m.dependency "nib", [nib_name], :destination=>destination_root
+      # m.dependency "nib", [nib_name], :destination=>destination_root
     end
   end
 

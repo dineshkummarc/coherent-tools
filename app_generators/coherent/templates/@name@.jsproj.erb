@@ -2,6 +2,7 @@ name: <%=name%>
 version: 1.0.0
 notice: src/NOTICE
 type: application
+export: <%=name%>
 
 external:
   - name: coherent
@@ -13,8 +14,11 @@ include:
   
 source:  
   - src/index.html
-  - src/js/<%=name%>.js
-  - src/js
-  - src/nibs
+
   - src/css/reset.css
   - src/css/<%=name%>.css
+
+  - src/nibs
+
+  - src/js/<%=name%>.js
+  - src/js

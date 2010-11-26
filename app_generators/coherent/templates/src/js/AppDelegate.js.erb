@@ -1,0 +1,42 @@
+/*jsl:import coherent*/
+
+
+/**
+  class <%=name%>.AppDelegate
+  
+  For simple applications, the AppDelegate may be all you need to configure and
+  manage your application. As the last item in the responder chain, any un-handled
+  action messages can be handled in this class.
+  
+  In addition, your AppDelegate may handle messages from the shared Application
+  object including `applicationDidFinishLaunching` and `hash
+*/
+<%=name%>.AppDelegate= Class.create(coherent.Controller, {
+
+  /**
+    <%=name%>.AppDelegate#applicationDidFinishLaunching(app)
+  
+    - app (coherent.Application): The shared application that has finished launching
+    
+    When the application has finished launching and all resources are available,
+    the shared Application will call this method. If you need to perform one-time
+    initialisation of your application, this is probably the best place to do it.
+  */
+  applicationDidFinishLaunching: function(app)
+  {
+  },
+  
+  /**
+    <%=name%>.AppDelegate#hashDidChange(hashValue)
+    
+    - hashValue (String): The new value of the hash on the URL
+    
+    Your application can present bookmarkable content by using the hash portion
+    of the URL. When the visitor uses the back button on his browser, this
+    method will be notified of the change.
+  */
+  hashDidChange: function(hashValue)
+  {
+  } 
+  
+});

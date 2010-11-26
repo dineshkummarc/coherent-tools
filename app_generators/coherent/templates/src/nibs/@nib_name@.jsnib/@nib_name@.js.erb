@@ -1,0 +1,27 @@
+/*jsl:import coherent*/
+/*jsl:import ../../js/AppDelegate.js*/
+
+NIB('<%=nib_name%>', {
+
+  '<%=nib_name%>': VIEW({
+  
+    ':root': coherent.View({
+      //  Set up necessary bindings and configuration information for your
+      //  root view here.
+    })
+    
+  }),
+
+  //  Instantiate your AppDelegate and configure it.
+  AppDelegate: <%=name%>.AppDelegate({
+    //  Place configuration options for your application delegate here
+  }),
+  
+  //  For the main interface bundle, the owner is the Application itself 
+  owner:
+  {
+    //  Connect your AppDelegate to the Application as a delegate
+    delegate: REF('AppDelegate')
+  }
+  
+});

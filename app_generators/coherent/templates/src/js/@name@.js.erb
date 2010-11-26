@@ -1,5 +1,12 @@
 /*jsl:import coherent*/
 
 /**
-    Core JS file file for the <%=name.titlecase%> application.
+    Core JS file for the <%=name.titlecase%> application.
  */
+
+(function()
+{
+
+  coherent.Application.shared.setMainNib("<%=nib_name%>");
+
+})();

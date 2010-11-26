@@ -18,13 +18,6 @@ def find_project_file(dir=nil)
   
 end
 
-def find_app_root
-  path= Dir.pwd
-  while '/'!=path
-    return path if File.exists?(File.join(path, "distil.yml"))
-    path = File.expand_path(File.join(path, ".."))
-  end
-end
 
 case ARGV[0]
 when 'app'
