@@ -3,14 +3,17 @@
 NIB('<%=name%>', {
 
   '<%=name%>': VIEW({
-      /* Put your view structure here. */
-      
-      ':root': coherent.View({
-              /* This is the container DOM element. */
-          })
+    ':root': coherent.View({
+      //  Set up necessary bindings and configuration information for your
+      //  root view here.
+      })
   }),
 
-  'owner': {
+  //  Connect your views or controllers to the owning ViewController
+  'owner':
+  {
+    //  Connect the main view for the ViewController, without this association
+    //  the ViewController won't be able to display your view.
     view: REF('<%=name%>')
   }
 
