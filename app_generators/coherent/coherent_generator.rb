@@ -71,6 +71,6 @@ EOS
     # created so don't sweat their absence here.
     BASEDIRS = %w(
       src
-      test
+      spec
     )
 end
