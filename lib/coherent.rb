@@ -1,5 +1,25 @@
 require "active_support"
 
+class String
+  def as_identifier
+    word= self.to_s.gsub(/(?:^|\W)(.)/) { $1.upcase }
+    # word[0..0].downcase + word[1..-1]
+  end
+  def starts_with?(prefix)
+    prefix = prefix.to_s
+    self[0, prefix.length] == prefix
+  end
+  def remove_indent
+    str= sub(/^\n*/, "")
+    match= str.match(/(^\s+)/)
+    return str unless match
+    str.gsub(/^#{match[1]}/, '').strip
+  end
+  def indent(str)
+    self.gsub(/^/, str)
+  end
+end
+
 class CoherentBaseGenerator < RubiGen::Base
   
   def copy_template_folder(m, path=nil)

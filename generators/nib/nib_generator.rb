@@ -10,7 +10,10 @@ class NibGenerator < CoherentBaseGenerator
     super
     usage if args.empty?
     @name = args.shift
-
+    if (@name.as_identifier != @name)
+      puts "Create NIB: name must be a valid identifier: #{@name} => #{@name.as_identifier}"
+      @name= @name.as_identifier
+    end
     extract_options
   end
 

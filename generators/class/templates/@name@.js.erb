@@ -2,9 +2,12 @@
 
 
 /**
-
+  class <%=full_name%>
+  
+  This is a good place to document your class.
  */
-<%= namespace.empty? ? "var " : ""%><%=full_name%>= Class.create(coherent.KVO, {
+<%= namespace.empty? ? "var " : ""%><%=full_name%>= Class.create(coherent.KVO,
+{
 
     sampleProperty: function()
     {

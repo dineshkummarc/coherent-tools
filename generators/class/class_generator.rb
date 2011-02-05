@@ -1,4 +1,5 @@
 require "#{File.dirname(__FILE__)}/../../lib/coherent"
+require "yaml"
 
 class ClassGenerator < CoherentBaseGenerator
 
@@ -12,9 +13,21 @@ class ClassGenerator < CoherentBaseGenerator
     full_name= args.shift
     parts= full_name.split(".")
     
-    @namespace= parts[0..-2].join(".")
+    
     @name= parts[-1]
     @full_name= full_name
+    @namespace= parts[0..-2].join(".")
+    
+    if @namespace.empty?
+      @target_folder = "src/js"
+      project = YAML::load_file(PROJECT_FILE)
+      if project["export"].is_a?(String)
+        @namespace = project["export"]
+        @full_name= [@namespace, @name].join(".")
+      end
+    else
+      @target_folder = "src/js/#{namespace.gsub(".", "/")}"
+    end
     
     extract_options
   end
@@ -22,7 +35,7 @@ class ClassGenerator < CoherentBaseGenerator
   def manifest
     record do |m|
 
-      copy_template_folder m, "src/js/#{@namespace.gsub(".", "/")}"
+      copy_template_folder m, @target_folder
       
     end
   end

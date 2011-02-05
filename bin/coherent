@@ -5,17 +5,30 @@ require 'rubigen'
 
 require 'rubigen/scripts/generate'
 
+BUILD_FILE= 'Buildfile'
+
 def find_project_file(dir=nil)
+  cwd= Dir.pwd
   dir ||= Dir.pwd
-  
   while dir.length > 1
-    files= Dir.glob(File.join(dir, '*.jsproj'))
-    if (1==files.length)
-      return files.first
+    build_file= File.join(dir, BUILD_FILE)
+    return build_file if File.exists?(build_file)
+    
+    projects= Dir.glob(File.join(dir, "*.jsproj"))
+    return from_file(projects.first) if 1==projects.size
+    
+    unless 0==projects.size
+      puts "More than one candidate for Project:"
+      projects.each { |e|
+        puts "  #{e}"
+      }
+      exit 1
     end
-    dir = File.dirname(dir)
+    
+    dir= File.dirname(dir)
   end
   
+  nil
 end
 
 

@@ -2,16 +2,15 @@
 
 NIB('<%=name%>', {
 
-  '<%=name%>': VIEW({
-    ':root': coherent.View({
-      //  Set up necessary bindings and configuration information for your
-      //  root view here.
-      })
-  }),
+  <%= name %> : VIEW({
+      ':root': coherent.View({
+          //  Set up necessary bindings and configuration information for your
+          //  root view here.
+        })
+    }),
 
   //  Connect your views or controllers to the owning ViewController
-  'owner':
-  {
+  owner: {
     //  Connect the main view for the ViewController, without this association
     //  the ViewController won't be able to display your view.
     view: REF('<%=name%>')
